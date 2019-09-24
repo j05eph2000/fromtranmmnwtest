@@ -133,6 +133,6 @@ for i in `seq 1 1 $MNCOUNT`; do
   sudo ufw allow $PORT/tcp
 
   mv wagerr.conf_TEMP $CONF_DIR/wagerr.conf
-  cp -rf /root/bootstrap/* $CONF_DIR
+  cp -rf ~/bootstrap/* $CONF_DIR
   sh ~/bin/wagerrd_$ALIAS.sh
 done
