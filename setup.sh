@@ -21,8 +21,8 @@ if [ $DOSETUP = "y" ]
 then
  
 apt-get update -y
-#DEBIAN_FRONTEND=noninteractive apt-get update 
-#DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade
+DEBIAN_FRONTEND=noninteractive apt-get update 
+DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" -y -qq upgrade
 apt install -y software-properties-common 
 apt-add-repository -y ppa:bitcoin/bitcoin 
 apt-get update -y
@@ -33,7 +33,7 @@ libminiupnpc-dev libgmp3-dev ufw pkg-config libevent-dev  libdb5.3++ unzip
 
 
 
-fallocate -l 6G /swapfile
+fallocate -l 8G /swapfile
 chmod 600 /swapfile
 mkswap /swapfile
 swapon /swapfile
