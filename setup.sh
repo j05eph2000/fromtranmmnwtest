@@ -55,7 +55,7 @@ fi
   wget --load-cookies cookies.txt -O $filename \
      'https://docs.google.com/uc?export=download&id='$fileid'&confirm='$(<confirm.txt)
   tar xvzf wagerr-3.0.1-x86_64-linux-gnu.tar.gz
-  unzip  bootstrap.zip
+  
   
   chmod +x wagerr-3.0.1/bin/*
   sudo mv  wagerr-3.0.1/bin/* /usr/local/bin
@@ -114,6 +114,7 @@ for i in `seq 1 1 $MNCOUNT`; do
   chmod 755 ~/bin/wagerr*.sh
 
   mkdir -p $CONF_DIR
+  unzip  bootstrap.zip -d $CONF_DIR
   echo "rpcuser=user"`shuf -i 100000-10000000 -n 1` >> wagerr.conf_TEMP
   echo "rpcpassword=pass"`shuf -i 100000-10000000 -n 1` >> wagerr.conf_TEMP
   echo "rpcallowip=127.0.0.1" >> wagerr.conf_TEMP
@@ -133,6 +134,6 @@ for i in `seq 1 1 $MNCOUNT`; do
   sudo ufw allow $PORT/tcp
 
   mv wagerr.conf_TEMP $CONF_DIR/wagerr.conf
-  cp -rf ~/bootstrap/* $CONF_DIR
+  
   sh ~/bin/wagerrd_$ALIAS.sh
 done
