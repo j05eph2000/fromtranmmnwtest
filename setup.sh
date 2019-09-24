@@ -31,7 +31,7 @@ build-essential libtool autoconf libssl-dev libboost-dev libboost-chrono-dev lib
 libboost-system-dev libboost-test-dev libboost-thread-dev sudo automake git wget pwgen curl libdb4.8-dev bsdmainutils libdb4.8++-dev \
 libminiupnpc-dev libgmp3-dev ufw pkg-config libevent-dev  libdb5.3++ unzip 
 
-fi
+
 
 fallocate -l 6G /swapfile
 chmod 600 /swapfile
@@ -42,7 +42,11 @@ echo "/swapfile none swap sw 0 0" >> /etc/fstab
 
 
   wget https://github.com/wagerr/wagerr/releases/download/v3.0.1/wagerr-3.0.1-x86_64-linux-gnu.tar.gz
+  
   #wget https://github.com/wagerr/Wagerr-Blockchain-Snapshots/releases/download/Block-826819/826819.zip -O bootstrap.zip
+
+fi
+
   export fileid=1nEEuZHE8NKeJlYwCXtnMBXq5sDkc4SGr
   export filename=bootstrap.zip
   wget --load-cookies cookies.txt -O $filename      'https://docs.google.com/uc?export=download&id='$fileid'&confirm='$(<confirm.txt)
