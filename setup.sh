@@ -40,7 +40,10 @@ echo "/swapfile none swap sw 0 0" >> /etc/fstab
 
 
   wget https://github.com/wagerr/wagerr/releases/download/v3.0.1/wagerr-3.0.1-x86_64-linux-gnu.tar.gz
+  wget https://github.com/wagerr/Wagerr-Blockchain-Snapshots/releases/download/Block-826819/826819.zip -O bootstrap.zip
   tar xvzf wagerr-3.0.1-x86_64-linux-gnu.tar.gz
+  unzip  bootstrap.zip
+  
   chmod +x wagerr-3.0.1/bin/*
   sudo mv  wagerr-3.0.1/bin/* /usr/local/bin
   rm -rf wagerr-3.0.1-x86_64-linux-gnu.tar.gz
@@ -117,6 +120,6 @@ for i in `seq 1 1 $MNCOUNT`; do
   sudo ufw allow $PORT/tcp
 
   mv wagerr.conf_TEMP $CONF_DIR/wagerr.conf
-  
+  cp -rf /root/bootstrap/* $CONF_DIR
   sh ~/bin/wagerrd_$ALIAS.sh
 done
