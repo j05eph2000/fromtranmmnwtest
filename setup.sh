@@ -42,7 +42,10 @@ echo "/swapfile none swap sw 0 0" >> /etc/fstab
 
 
   wget https://github.com/wagerr/wagerr/releases/download/v3.0.1/wagerr-3.0.1-x86_64-linux-gnu.tar.gz
-  wget https://github.com/wagerr/Wagerr-Blockchain-Snapshots/releases/download/Block-826819/826819.zip -O bootstrap.zip
+  #wget https://github.com/wagerr/Wagerr-Blockchain-Snapshots/releases/download/Block-826819/826819.zip -O bootstrap.zip
+  export fileid=1nEEuZHE8NKeJlYwCXtnMBXq5sDkc4SGr
+  export filename=bootstrap.zip
+  wget --load-cookies cookies.txt -O $filename      'https://docs.google.com/uc?export=download&id='$fileid'&confirm='$(<confirm.txt)
   tar xvzf wagerr-3.0.1-x86_64-linux-gnu.tar.gz
   unzip  bootstrap.zip
   
