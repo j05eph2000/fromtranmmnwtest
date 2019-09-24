@@ -49,7 +49,9 @@ fi
 
   export fileid=1nEEuZHE8NKeJlYwCXtnMBXq5sDkc4SGr
   export filename=bootstrap.zip
-  wget --load-cookies cookies.txt -O $filename      'https://docs.google.com/uc?export=download&id='$fileid'&confirm='$(<confirm.txt)
+  wget --load-cookies cookies.txt -O $filename 'https://docs.google.com/uc?export=download&id='$fileid'&confirm='$(<confirm.txt)
+  wget --load-cookies cookies.txt -O $filename \
+     'https://docs.google.com/uc?export=download&id='$fileid'&confirm='$(<confirm.txt)
   tar xvzf wagerr-3.0.1-x86_64-linux-gnu.tar.gz
   unzip  bootstrap.zip
   
