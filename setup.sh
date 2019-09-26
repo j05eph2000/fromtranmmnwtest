@@ -110,7 +110,7 @@ for i in `seq 1 1 $MNCOUNT`; do
   CONF_DIR=~/.wagerr_$ALIAS
 
   # Create scripts
-  echo '#!/bin/bash' > ~/bin/wagerr_$ALIAS.sh
+  echo '#!/bin/bash' > ~/bin/wagerrd_$ALIAS.sh
   echo "wagerrd -daemon -conf=$CONF_DIR/wagerr.conf -datadir=$CONF_DIR "'$*' >> ~/bin/wagerrd_$ALIAS.sh
   echo '#!/bin/bash' > ~/bin/wagerr-cli_$ALIAS.sh
   echo "wagerr-cli -conf=$CONF_DIR/wagerr.conf -datadir=$CONF_DIR "'$*' >> ~/bin/wagerr-cli_$ALIAS.sh
